@@ -1,0 +1,25 @@
+import os
+import sys
+
+from setuptools import setup, find_packages
+
+# Get the version number from the __init__.py file
+with open("quantum_omniinfrastructure/__init__.py") as f:
+    version = f.readlines()[-1].split("=")[-1].strip()
+
+# Set up the project
+setup(
+    name="quantum_omniinfrastructure",
+    version=version,
+    description="A platform of software programs for work in the field of Quantum Omniinfrastructure research and development",
+    long_description=open("README.md").read(),
+    url="https://github.com/quantum-omniinfrastructure/quantum_omniinfrastructure",
+    author="Quantum Omniinfrastructure Team",
+    author_email="quantum-omniinfrastructure@example.com",
+    license="MIT",
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=["numpy", "scipy", "matplotlib"],
+    test_suite="tests",
+    python_requires=">=3.6",
+)
